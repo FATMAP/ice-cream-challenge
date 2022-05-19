@@ -1,0 +1,10 @@
+{
+  "name": "icecream",
+  "version": "0.0.1",
+  "scripts": {
+    "api": "json-server db.json"
+  },
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}

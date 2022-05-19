@@ -1,0 +1,227 @@
+{
+  "shops": [
+    {
+      "name": "Creamy Explosion",
+      "type": "IceCream"
+    },
+    {
+      "name": "Dairies N’ Berries",
+      "type": "IceCream"
+    },
+    {
+      "name": "Old Fashioned Ice Creamery",
+      "type": "IceCream"
+    },
+    {
+      "name": "The Ice Cream Quarters",
+      "type": "IceCream"
+    },
+    {
+      "name": "The Frostbite Chunks",
+      "type": "IceCream"
+    },
+    {
+      "name": "Cone’s Mate",
+      "type": "IceCream"
+    },
+    {
+      "name": "The Dairy Backyard",
+      "type": "IceCream"
+    },
+    {
+      "name": "Retro Creamery",
+      "type": "IceCream"
+    },
+    {
+      "name": "The Frosty Guys",
+      "type": "IceCream"
+    },
+    {
+      "name": "Icy Wonderland",
+      "type": "IceCream"
+    },
+    {
+      "name": "Milky Scoops",
+      "type": "IceCream"
+    },
+    {
+      "name": "The Creamery Factory",
+      "type": "IceCream"
+    },
+    {
+      "name": "The Dairy Corner",
+      "type": "IceCream"
+    },
+    {
+      "name": "Sugar Boulevard",
+      "type": "IceCream"
+    },
+    {
+      "name": "Have A Scoop",
+      "type": "IceCream"
+    },
+    {
+      "name": "Frostbite Ice Cream",
+      "type": "IceCream"
+    },
+    {
+      "name": "The Creamery House",
+      "type": "IceCream"
+    },
+    {
+      "name": "Frozen Bar",
+      "type": "IceCream"
+    },
+    {
+      "name": "The Dessert House",
+      "type": "IceCream"
+    },
+    {
+      "name": "Sweet Snowballs",
+      "type": "IceCream"
+    },
+    {
+      "name": "Ice, Ice, Baby",
+      "type": "IceCream"
+    },
+    {
+      "name": "Banana Split Town",
+      "type": "IceCream"
+    },
+    {
+      "name": "Simpler Times Ice Cream Co.",
+      "type": "IceCream"
+    },
+    {
+      "name": "Sundae, Good Day.",
+      "type": "IceCream"
+    },
+    {
+      "name": "Chilled Bites",
+      "type": "IceCream"
+    },
+    {
+      "name": "Frozen Happiness",
+      "type": "IceCream"
+    },
+    {
+      "name": "Golden Scoops",
+      "type": "IceCream"
+    },
+    {
+      "name": "Frozen Flavors",
+      "type": "IceCream"
+    },
+    {
+      "name": "Ice Swirls",
+      "type": "IceCream"
+    },
+    {
+      "name": "The Good Cones",
+      "type": "IceCream"
+    },
+    {
+      "name": "Waffle Cone House",
+      "type": "IceCream"
+    },
+    {
+      "name": "The Scoop Party",
+      "type": "IceCream"
+    },
+    {
+      "name": "Frozen Hideout",
+      "type": "IceCream"
+    },
+    {
+      "name": "Ice Vanilla Bean",
+      "type": "IceCream"
+    },
+    {
+      "name": "We Milk It",
+      "type": "IceCream"
+    },
+    {
+      "name": "Dream Bites Palace",
+      "type": "IceCream"
+    },
+    {
+      "name": "Icicles Creamy Bar",
+      "type": "IceCream"
+    },
+    {
+      "name": "The Icy Fudge",
+      "type": "IceCream"
+    },
+    {
+      "name": "Frozen Dairy Station",
+      "type": "IceCream"
+    },
+    {
+      "name": "Milk Bites",
+      "type": "IceCream"
+    },
+    {
+      "name": "The Ice Cream Tale",
+      "type": "IceCream"
+    },
+    {
+      "name": "Melting Happiness",
+      "type": "IceCream"
+    },
+    {
+      "name": "Frozen Treats Fortress",
+      "type": "IceCream"
+    },
+    {
+      "name": "Sweetened Life",
+      "type": "IceCream"
+    },
+    {
+      "name": "Icy Batter",
+      "type": "IceCream"
+    },
+    {
+      "name": "The Vanilla Cone",
+      "type": "IceCream"
+    },
+    {
+      "name": "Ultimate Ice Cream",
+      "type": "IceCream"
+    },
+    {
+      "name": "Old Country Ice Cream",
+      "type": "IceCream"
+    },
+    {
+      "name": "Wonder Cone",
+      "type": "IceCream"
+    },
+    {
+      "name": "Relish Creamy",
+      "type": "IceCream"
+    },
+    {
+      "name": "Millennial’s Ice Cream",
+      "type": "IceCream"
+    },
+    {
+      "name": "Flavor Galore",
+      "type": "IceCream"
+    },
+    {
+      "name": "Topped With Happiness",
+      "type": "IceCream"
+    },
+    {
+      "name": "Creamy Supernova",
+      "type": "IceCream"
+    },
+    {
+      "name": "The Dairy Lady",
+      "type": "IceCream"
+    },
+    {
+      "name": "Frozen Sweets Indulgence"
+    }
+  ]
+}
