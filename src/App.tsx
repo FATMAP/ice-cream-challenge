@@ -36,16 +36,28 @@ function App() {
 
   return (
     <main className="main">
-      <img src={SearchIcon} alt="Search icon" />
-      <input
-        placeholder="Search"
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-      ></input>
-      {isSearching && <img src={CloseIcon} alt="Search icon" />}
-      <ul>
-        {isSearching && searchResults.map((item: Shop) => <li>{item.name}</li>)}
-      </ul>
+      <div className="search">
+        <div className="searchBar">
+          <img src={SearchIcon} alt="Search icon" />
+          <input
+            placeholder="Search"
+            value={inputText}
+            onChange={(e) => setInputText(e.target.value)}
+          ></input>
+          {isSearching && (
+            <button onClick={() => setInputText("")}>
+              <img src={CloseIcon} alt="Search icon" />
+            </button>
+          )}
+        </div>
+        {isSearching && searchResults.length > 0 && (
+          <ul className="searchResults">
+            {searchResults.map((item: Shop, index) => (
+              <li key={`${item.name}-${index}`}>{item.name}</li>
+            ))}
+          </ul>
+        )}
+      </div>
     </main>
   );
 }

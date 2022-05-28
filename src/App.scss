@@ -1,3 +1,6 @@
+$input-size: 48px;
+$input-spacing: 12px;
+
 .main {
   background-color: #282c34;
   min-height: 100vh;
@@ -8,7 +11,48 @@
   font-size: calc(10px + 2vmin);
   color: white;
 
-  ul {
-    list-style: none;
+  .search {
+    position: fixed;
+    top: 100px;
+    font-size: 1.2rem;
+
+    .searchBar {
+      background-color: white;
+      display: flex;
+      padding: $input-spacing calc($input-spacing * 2);
+      height: $input-size;
+      width: 400px;
+      border-radius: calc($input-size/2);
+  
+      input {
+        flex-grow: 1;
+        margin: 0 $input-spacing;
+        border-bottom: 1px solid #282c34;
+      }
+  
+      button {
+        cursor: pointer;
+      }
+  
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  
+    ul.searchResults {
+      position: absolute;
+      list-style: none;
+      width: 100%;
+      margin: 8px 0;
+      padding: $input-spacing;
+      border-radius: calc($input-size/2);
+      background-color: white;
+      color: black;
+
+      li:not(:first-child) {
+        margin-top: 8px;
+      }
+    }
   }
 }
