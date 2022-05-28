@@ -13,9 +13,13 @@ function App() {
   const [searchResults, setResults] = useState<Shop[]>([]);
   const isSearching = inputText.length > 0;
 
-  const fuse = useMemo(() => new Fuse(shops, {
-    keys: ["name"],
-  }), [shops]);
+  const fuse = useMemo(
+    () =>
+      new Fuse(shops, {
+        keys: ["name"],
+      }),
+    [shops]
+  );
 
   useEffect(() => {
     fetch("http://127.0.01:8000/shops")
