@@ -45,7 +45,7 @@ const SearchResults: React.FC<Props> = ({
   }
 
   return (
-    <ul className="searchResults">
+    <ul className="searchResults" data-testid="searchResultsWrapper">
       {searchResults.map((item: Shop, index) => (
         <li
           key={`${item.name}-${index}`}

@@ -1,8 +1,14 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("renders learn react link", () => {
+test("Renders App with SearchBar", async () => {
+  jest.spyOn(window, "alert").mockImplementation(() => {});
+  jest.spyOn(React, "useEffect").mockImplementation(() => {});
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  /**
+   * Basic test - input with placeholder "Search" is rendered in App
+   */
+  const inputWithPlaceholder = await screen.findByPlaceholderText(/Search/i);
+  expect(inputWithPlaceholder).toBeInTheDocument();
 });

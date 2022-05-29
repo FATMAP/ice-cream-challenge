@@ -1,2 +1,4 @@
-type DBKeys = "name" | "type";
-export type Shop = Record<DBKeys, string>;
+export type Shop = {
+  name: string;
+  type?: string;
+}
