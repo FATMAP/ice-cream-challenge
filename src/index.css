@@ -17,3 +17,10 @@ button, input {
 	padding: 0;
 	outline: inherit;
 }
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}

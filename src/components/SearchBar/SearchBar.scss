@@ -1,0 +1,28 @@
+@use 'src/styles/variables' as v;
+
+.searchBar {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: v.$input-spacing calc(v.$input-spacing * 2);
+  height: v.$input-size;
+  border-radius: v.$box-radius;
+
+  input {
+    flex-grow: 1;
+    width: 100%;
+    margin: 0 v.$input-spacing;
+    border-radius: 0;
+    border-bottom: 1px solid v.$color-grey;
+    font-size: 1.2rem;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
+}

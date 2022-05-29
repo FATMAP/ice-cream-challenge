@@ -1,0 +1,18 @@
+@use 'src/styles/variables' as v;
+
+.shopDetail {
+  background-color: white;
+  color: black;
+  padding: v.$input-spacing;
+  width: 100%;
+  max-width: 400px;
+
+  .shopName {
+    font-size: 1.4rem;
+  }
+
+  .shopType {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+}
