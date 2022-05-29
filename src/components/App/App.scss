@@ -1,7 +1,7 @@
 @use 'src/styles/variables' as v;
 
 .main {
-  background-color: v.$color-grey;
+  background-color: v.$color-bg;
   min-height: 100vh;
   padding: 2em;
   display: flex;
