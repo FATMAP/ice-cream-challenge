@@ -3,11 +3,12 @@ import "./SearchResults.scss";
 
 interface Props {
   results: Shop[];
-  setSelectedItem: (a: Shop) => void;
+  isOpen: boolean;
+  setItem: (a: Shop) => void;
 }
 
-const SearchResults: React.FC<Props> = ({ results, setSelectedItem }) => {
-  if (!results.length) {
+const SearchResults: React.FC<Props> = ({ results, isOpen, setItem }) => {
+  if (!isOpen) {
     return null;
   }
   return (
@@ -16,7 +17,7 @@ const SearchResults: React.FC<Props> = ({ results, setSelectedItem }) => {
         <li
           key={`${item.name}-${index}`}
           role="button"
-          onClick={() => setSelectedItem(item)}
+          onClick={() => setItem(item)}
         >
           {item.name}
         </li>

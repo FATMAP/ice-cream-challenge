@@ -11,6 +11,7 @@ function App() {
   const [shops, setShops] = useState<Shop[]>([]);
   const [searchResults, setResults] = useState<Shop[]>([]);
   const [selectedShop, setSelectedShop] = useState<Shop | undefined>();
+  const [areResultsOpen, setResultsOpen] = useState(false);
 
   /**
    * API data fetching - this could be done:
@@ -66,12 +67,17 @@ function App() {
       <div className="search">
         <SearchBar
           inputText={inputText}
+          onInputFocus={() => setResultsOpen(true)}
           onInputChange={(e) => setInputText(e.target.value)}
           onClear={() => setInputText("")}
         />
         <SearchResults
           results={searchResults}
-          setSelectedItem={setSelectedShop}
+          isOpen={areResultsOpen && searchResults.length > 0}
+          setItem={(item: Shop) => {
+            setSelectedShop(item);
+            setResultsOpen(false);
+          }}
         />
       </div>
 
