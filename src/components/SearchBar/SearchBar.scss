@@ -15,6 +15,7 @@
     border-radius: 0;
     border-bottom: 1px solid v.$color-grey;
     font-size: 1.2rem;
+    @include v.clip-text;
   }
 
   button {

@@ -12,6 +12,7 @@ ul.searchResults {
 
   li[role=button] {
     cursor: pointer;
+    @include v.clip-text;
   }
 
   li:not(:first-child) {

@@ -10,12 +10,23 @@
   color: black;
   border-radius: 4px;
 
-  .shopName {
-    font-size: 1.4rem;
+  .shopIcon {
+    height: 56px;
+    min-width: 56px;
   }
 
-  .shopType {
-    font-size: 1.2rem;
-    font-weight: 400;
+  .shopInfo {
+    flex-grow: 1;
+    min-width: 0;
+
+    .shopName {
+      font-size: 1.4rem;
+      @include v.clip-text;
+    }
+  
+    .shopType {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
   }
 }

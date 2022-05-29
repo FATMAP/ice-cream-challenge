@@ -10,10 +10,11 @@ interface Props {
 const ShopDetail: React.FC<Props> = ({ selectedShop }) => (
   <article className="shopDetail">
     <img
+      className="shopIcon"
       src={selectedShop?.type === "IceCream" ? IceCream : Location}
       alt={selectedShop?.type || "Shop type"}
     />
-    <aside>
+    <aside className="shopInfo">
       <h2 className="shopName">{selectedShop.name}</h2>
       <h3 className="shopType">{selectedShop?.type}</h3>
     </aside>
