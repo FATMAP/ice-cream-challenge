@@ -1,27 +1,36 @@
 import { useState, useEffect } from "react";
 import SearchResults from "components/SearchResults/SearchResults";
-import { Shop } from "types";
-import "./App.scss";
 import SearchBar from "components/SearchBar/SearchBar";
 import ShopDetail from "components/ShopDetail/ShopDetail";
+import { Shop } from "types";
+import "./App.scss";
 
 function App() {
-  const [inputText, setInputText] = useState("");
-  const [shops, setShops] = useState<Shop[]>([]);
-  const [selectedShop, setSelectedShop] = useState<Shop | undefined>();
-  const [areResultsOpen, setResultsOpen] = useState(false);
-
   /**
-   * API data fetching - this could be done:
-   * 1. api route for nextjs (middleware)
-   * 2. `getStaticProps` in nextjs
-   * 3. SSR middleware before render
-   * 4. here, because it's a simple fetch and we don't use env vars.
+   * `shops` and the api fetch below could be fetched server-side and
+   * passed as props (e.g. `getServerSideProps`), but this is simpler for CRA.
    */
+  const [shops, setShops] = useState<Shop[]>([]);
+  /**
+   * inputText and selectedShop could be in a shared context and
+   * used in children components instead of being in this state and then
+   * passed to every children. Because there's only 1 level nesting,
+   * I thought this was a better solution.
+   * Source https://reactjs.org/docs/context.html#before-you-use-context.
+   */
+  const [inputText, setInputText] = useState("");
+  const [selectedShop, setSelectedShop] = useState<Shop | undefined>();
+
+  const [areResultsOpen, setResultsOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    fetch("http://127.0.01:8000/shops")
+    setLoading(true);
+    fetch("/shops")
       .then((r) => r.json())
-      .then((r) => setShops(r));
+      .then((r) => setShops(r))
+      .catch((e: Error) => alert(e.message))
+      .finally(() => setLoading(false));
   }, []);
 
   /**
@@ -45,23 +54,25 @@ function App() {
 
   return (
     <main className="main">
-      <div className="search">
-        <SearchBar
-          inputText={inputText}
-          onInputFocus={() => setResultsOpen(true)}
-          onInputChange={(e) => setInputText(e.target.value)}
-          onClear={() => setInputText("")}
-        />
-        <SearchResults
-          options={shops}
-          query={inputText}
-          isOpen={areResultsOpen}
-          setItem={(item: Shop) => {
-            setSelectedShop(item);
-            setResultsOpen(false);
-          }}
-        />
-      </div>
+      {!loading && (
+        <div className="search">
+          <SearchBar
+            inputText={inputText}
+            onInputFocus={() => setResultsOpen(true)}
+            onInputChange={(e) => setInputText(e.target.value)}
+            onClear={() => setInputText("")}
+          />
+          <SearchResults
+            options={shops}
+            query={inputText}
+            isOpen={areResultsOpen}
+            setItem={(item: Shop) => {
+              setSelectedShop(item);
+              setResultsOpen(false);
+            }}
+          />
+        </div>
+      )}
 
       {selectedShop && <ShopDetail selectedShop={selectedShop} />}
     </main>
