@@ -9,6 +9,7 @@ $box-radius: calc($input-size/2);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
 
@@ -23,7 +24,7 @@ $box-radius: calc($input-size/2);
       padding: $input-spacing calc($input-spacing * 2);
       height: $input-size;
       border-radius: $box-radius;
-  
+
       input {
         flex-grow: 1;
         width: 100%;
@@ -32,26 +33,30 @@ $box-radius: calc($input-size/2);
         border-bottom: 1px solid #282c34;
         font-size: 1.2rem;
       }
-  
+
       button {
         cursor: pointer;
       }
-  
+
       img {
         width: 18px;
         height: 18px;
       }
     }
-  
+
     ul.searchResults {
       list-style: none;
       width: 100%;
       margin: 8px 0;
-      padding: $input-spacing calc($input-spacing*2);
+      padding: $input-spacing calc($input-spacing * 2);
       border-radius: $box-radius;
       background-color: white;
       color: black;
       font-size: 1.2rem;
+
+      li[role=button] {
+        cursor: pointer;
+      }
 
       li:not(:first-child) {
         margin-top: 8px;

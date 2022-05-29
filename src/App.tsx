@@ -11,7 +11,7 @@ function App() {
   const [inputText, setInputText] = useState("");
   const [shops, setShops] = useState<Shop[]>([]);
   const [searchResults, setResults] = useState<Shop[]>([]);
-  const isSearching = inputText.length > 0;
+  const [selectedShop, setSelectedShop] = useState<Shop | null>(null);
 
   const fuse = useMemo(
     () =>
@@ -34,6 +34,12 @@ function App() {
     setResults(results);
   }, [inputText, fuse]);
 
+  useEffect(() => {
+    if (inputText.length === 0) {
+      setSelectedShop(null);
+    }
+  }, [inputText]);
+
   return (
     <main className="main">
       <div className="search">
@@ -41,23 +47,36 @@ function App() {
           <img src={SearchIcon} alt="Search icon" />
           <input
             placeholder="Search"
-            value={inputText}
+            value={selectedShop ? selectedShop.name : inputText}
             onChange={(e) => setInputText(e.target.value)}
           ></input>
-          {isSearching && (
+          {inputText.length > 0 && (
             <button onClick={() => setInputText("")}>
               <img src={CloseIcon} alt="Search icon" />
             </button>
           )}
         </div>
-        {isSearching && searchResults.length > 0 && (
+        {searchResults.length > 0 && !selectedShop && (
           <ul className="searchResults">
             {searchResults.map((item: Shop, index) => (
-              <li key={`${item.name}-${index}`}>{item.name}</li>
+              <li
+                key={`${item.name}-${index}`}
+                role="button"
+                onClick={() => setSelectedShop(item)}
+              >
+                {item.name}
+              </li>
             ))}
           </ul>
         )}
       </div>
+
+      {selectedShop && (
+        <div>
+          <p>{selectedShop.name}</p>
+          <p>{selectedShop?.type}</p>
+        </div>
+      )}
     </main>
   );
 }
