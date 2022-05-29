@@ -7,13 +7,13 @@
   padding: v.$input-spacing calc(v.$input-spacing * 2);
   height: v.$input-size;
   border-radius: v.$box-radius;
+  border: v.$border-box;
 
   input {
     flex-grow: 1;
     width: 100%;
     margin: 0 v.$input-spacing;
     border-radius: 0;
-    border-bottom: 1px solid v.$color-grey;
     font-size: 1.2rem;
     @include v.clip-text;
   }

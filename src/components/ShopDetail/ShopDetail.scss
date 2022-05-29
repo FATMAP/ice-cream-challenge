@@ -9,6 +9,7 @@
   background-color: white;
   color: black;
   border-radius: 4px;
+  border: v.$border-box;
 
   .shopIcon {
     height: 56px;
@@ -21,6 +22,7 @@
 
     .shopName {
       font-size: 1.4rem;
+      color: v.$color-grey;
       @include v.clip-text;
     }
   

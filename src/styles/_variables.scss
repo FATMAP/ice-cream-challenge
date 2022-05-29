@@ -1,8 +1,11 @@
+$color-grey: #46505F;
+$color-lightgrey: #A1ACB9;
+
 $input-size: 48px;
 $input-spacing: 12px;
+
 $box-radius: calc($input-size/2);
-$color-grey: #46505F;
-$color-bg: #282c34;
+$border-box: 2px solid $color-lightgrey;
 
 @mixin clip-text {
   white-space: nowrap;
