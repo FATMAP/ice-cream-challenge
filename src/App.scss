@@ -1,33 +1,36 @@
 $input-size: 48px;
 $input-spacing: 12px;
+$box-radius: calc($input-size/2);
 
 .main {
   background-color: #282c34;
   min-height: 100vh;
+  padding: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 
   .search {
-    position: fixed;
-    top: 100px;
-    font-size: 1.2rem;
+    width: 100%;
+    max-width: 400px;
 
     .searchBar {
       background-color: white;
       display: flex;
+      align-items: center;
       padding: $input-spacing calc($input-spacing * 2);
       height: $input-size;
-      width: 400px;
-      border-radius: calc($input-size/2);
+      border-radius: $box-radius;
   
       input {
         flex-grow: 1;
+        width: 100%;
         margin: 0 $input-spacing;
+        border-radius: 0;
         border-bottom: 1px solid #282c34;
+        font-size: 1.2rem;
       }
   
       button {
@@ -35,20 +38,20 @@ $input-spacing: 12px;
       }
   
       img {
-        width: 24px;
-        height: 24px;
+        width: 18px;
+        height: 18px;
       }
     }
   
     ul.searchResults {
-      position: absolute;
       list-style: none;
       width: 100%;
       margin: 8px 0;
-      padding: $input-spacing;
-      border-radius: calc($input-size/2);
+      padding: $input-spacing calc($input-spacing*2);
+      border-radius: $box-radius;
       background-color: white;
       color: black;
+      font-size: 1.2rem;
 
       li:not(:first-child) {
         margin-top: 8px;
