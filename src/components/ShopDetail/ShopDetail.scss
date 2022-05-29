@@ -1,0 +1,34 @@
+@use 'src/styles/variables' as v;
+
+.shopDetail {
+  display: flex;
+  padding: v.$input-spacing;
+  height: 80px;
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  color: black;
+  border-radius: 4px;
+  border: v.$border-box;
+
+  .shopIcon {
+    height: 56px;
+    min-width: 56px;
+  }
+
+  .shopInfo {
+    flex-grow: 1;
+    min-width: 0;
+
+    .shopName {
+      font-size: 1.4rem;
+      color: v.$color-grey;
+      @include v.clip-text;
+    }
+  
+    .shopType {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+  }
+}

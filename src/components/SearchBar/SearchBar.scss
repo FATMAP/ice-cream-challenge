@@ -1,0 +1,29 @@
+@use 'src/styles/variables' as v;
+
+.searchBar {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: v.$input-spacing calc(v.$input-spacing * 2);
+  height: v.$input-size;
+  border-radius: v.$box-radius;
+  border: v.$border-box;
+
+  input {
+    flex-grow: 1;
+    width: 100%;
+    margin: 0 v.$input-spacing;
+    border-radius: 0;
+    font-size: 1.2rem;
+    @include v.clip-text;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
+}

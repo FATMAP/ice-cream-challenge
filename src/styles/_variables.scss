@@ -1,0 +1,14 @@
+$color-grey: #46505F;
+$color-lightgrey: #A1ACB9;
+
+$input-size: 48px;
+$input-spacing: 12px;
+
+$box-radius: calc($input-size/2);
+$border-box: 2px solid $color-lightgrey;
+
+@mixin clip-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

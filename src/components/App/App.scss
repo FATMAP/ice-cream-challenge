@@ -1,0 +1,32 @@
+@use 'src/styles/variables' as v;
+
+.main {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  
+  &:before {
+    content: "";
+    position: absolute;
+    width: 300vw;
+    height: 300vh;
+    top: -100%;
+    left: -100%;
+    z-index: -1;
+    background: url('../../assets/tile.jpg') 0 0 repeat;
+    transform: rotate(-30deg);
+  }
+  
+
+  .search {
+    width: 100%;
+    max-width: 400px;
+  }
+}
