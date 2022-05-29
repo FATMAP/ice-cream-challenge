@@ -1,5 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
-import Fuse from "fuse.js";
+import { useState, useEffect } from "react";
 import SearchResults from "components/SearchResults/SearchResults";
 import { Shop } from "types";
 import "./App.scss";
@@ -9,7 +8,6 @@ import ShopDetail from "components/ShopDetail/ShopDetail";
 function App() {
   const [inputText, setInputText] = useState("");
   const [shops, setShops] = useState<Shop[]>([]);
-  const [searchResults, setResults] = useState<Shop[]>([]);
   const [selectedShop, setSelectedShop] = useState<Shop | undefined>();
   const [areResultsOpen, setResultsOpen] = useState(false);
 
@@ -27,35 +25,18 @@ function App() {
   }, []);
 
   /**
-   * Memoization of the 'fuse' object avoids the `results`
-   * useEffect hook dependencies changing on every re-render.
+   * Clears selected shop if the Search input is cleared
+   * (manually or using the clear button)
    */
-  const fuse = useMemo(
-    () =>
-      new Fuse(shops, {
-        keys: ["name"],
-      }),
-    [shops]
-  );
-
-  /**
-   * The fuzzy search could be done in `SearchResults`, but
-   * the Fuse instance should be here (because of unmount)
-   * and I prefer to have them together.
-   */
-  useEffect(() => {
-    const results = fuse
-      .search(inputText || "", { limit: 10 })
-      .map((o: { item: Shop }) => o.item);
-    setResults(results);
-  }, [inputText, fuse]);
-
   useEffect(() => {
     if (inputText.length === 0) {
       setSelectedShop(undefined);
     }
   }, [inputText]);
 
+  /**
+   * "Autocompletes" search text to shop name when clicking one from the list
+   */
   useEffect(() => {
     if (selectedShop) {
       setInputText(selectedShop.name);
@@ -72,8 +53,9 @@ function App() {
           onClear={() => setInputText("")}
         />
         <SearchResults
-          results={searchResults}
-          isOpen={areResultsOpen && searchResults.length > 0}
+          options={shops}
+          query={inputText}
+          isOpen={areResultsOpen}
           setItem={(item: Shop) => {
             setSelectedShop(item);
             setResultsOpen(false);
